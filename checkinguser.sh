@@ -1,7 +1,8 @@
 #!/bin/bash
 
 user=$(id roboshop)
-if [ $user -ne 0 ]
+
+if [ $? -ne 0 ]
 then 
 echo " addding user"
 useradd roboshop
