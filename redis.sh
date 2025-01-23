@@ -20,11 +20,11 @@ else
 echo  -e " $r $2 ... failure $n"
 fi  
 }
-dnf install https://rpms.remirepo.net/enterprise/remi-release-8.rpm -y --skip-broken  &>>$logfile
+dnf install https://rpms.remirepo.net/enterprise/remi-release-8.rpm -y   &>>$logfile
 
 validate $? "installing redis repo file"
 
-yum module enable redis:remi-6.2 -y &>>$logfile
+dnf module enable redis:remi-6.2 -y &>>$logfile
 
 validate $? "enabling redis 6.2"
 
