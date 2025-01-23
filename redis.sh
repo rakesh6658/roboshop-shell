@@ -20,7 +20,7 @@ else
 echo  -e " $r $2 ... failure $n"
 fi  
 }
-yum install https://rpms.remirepo.net/enterprise/remi-release-8.rpm -y &>> $logfile
+yum install https://rpms.remirepo.net/enterprise/remi-release-8.10.rpm -y &>> $logfile
 
 validate $? "installing redis repo file"
 
