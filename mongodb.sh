@@ -2,6 +2,7 @@ user=$(id -u)
 if [ $user -ne 0 ]
 then
 echo "user is not root user"
+exit 1
 fi
 LOGDIR=/tmp
 name=$0
