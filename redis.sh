@@ -23,7 +23,7 @@ fi
 yum module disable redis -y  &>> $logfile
 validate $? "disable redis"
 
-yum module enable redis:7 -y &>> $logfile
+yum module enable redis:remi-6.2 -y -y &>> $logfile
 
 validate $? "enabling redis 7"
 
