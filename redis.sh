@@ -20,13 +20,12 @@ else
 echo  -e " $r $2 ... failure $n"
 fi  
 }
-yum install https://rpms.remirepo.net/enterprise/remi-release-7.rpm -y &>> $logfile
+yum module disable redis -y  &>> $logfile
+validate $? "disable redis"
 
-validate $? "installing redis repo file"
+yum module enable redis:7 -y &>> $logfile
 
-yum  module enable redis:remi-6.2 -y &>>$logfile
-
-validate $? "enabling redis 6.2"
+validate $? "enabling redis 7"
 
 sed -i "s/127.0.0.1/0.0.0.0/g" /etc/redis.conf /etc/redis/redis.conf  &>>$logfile
 
