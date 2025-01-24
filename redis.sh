@@ -23,9 +23,13 @@ fi
 yum module disable redis -y  &>> $logfile
 validate $? "disable redis"
 
-yum module enable redis:remi-6.2 -y -y &>> $logfile
+yum module enable redis:remi-6.2 -y  &>> $logfile
 
 validate $? "enabling redis 7"
+
+yum install redis -y &>> $logfile
+
+validate $? "installing redis"
 
 sed -i "s/127.0.0.1/0.0.0.0/g" /etc/redis.conf /etc/redis/redis.conf  &>>$logfile
 
