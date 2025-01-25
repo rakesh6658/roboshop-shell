@@ -32,7 +32,7 @@ yum install redis -y &>> $logfile
 
 validate $? "installing redis"
 
-sed -i "s/127.0.0.1/0.0.0.0/g" /etc/redis.conf /etc/redis/redis.conf  &>>$logfile
+sed -i "s/127.0.0.1/0.0.0.0/g"  /etc/redis/redis.conf  &>>$logfile
 
 validate $? "updating listen address"
 
