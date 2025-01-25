@@ -24,7 +24,7 @@ cp /home/ec2-user/roboshop-shell/mongo.repo /etc/yum.repos.d/mongo.repo &>>$logf
 
 validate $? "copying mongo.repo"
 
-yum install mongodb-org -y &>>$logfile
+dnf install mongodb-org -y  &>>$logfile
  
 validate $? "installing mongodb"
 
