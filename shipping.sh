@@ -37,7 +37,7 @@ echo " user already exists "
 fi
 mkdir /app &>>$logfile
 
-curl -L -o /tmp/shipping.zip https://roboshop-artifacts.s3.amazonaws.com/shipping-v3.zip &>>$logfile
+curl -L -o /tmp/shipping.zip https://roboshop-artifacts.s3.amazonaws.com/shipping.zip  &>>$logfile
 
 validate $? "downloading shipping.zip"
 
@@ -78,17 +78,10 @@ dnf install mysql -y &>>$logfile
 
 validate $? "install mysql"
 
-mysql -h <MYSQL-SERVER-IPADDRESS> -uroot -pRoboShop@1 < /app/db/schema.sql &>>$logfile
+mysql -h <MYSQL-SERVER-IPADDRESS> -uroot -pRoboShop@1 < /app/schema/shipping.sql  &>>$logfile
 
 validate $? "loading data"
 
-mysql -h <MYSQL-SERVER-IPADDRESS> -uroot -pRoboShop@1 < /app/db/app-user.sql  &>>$logfile
-
-validate $? "creating app-user"
-
-mysql -h <MYSQL-SERVER-IPADDRESS> -uroot -pRoboShop@1 < /app/db/master-data.sql &>>$logfile
-
-validate $? "loading cities and countries"
 
 systemctl restart shipping &>>$logfile
 
