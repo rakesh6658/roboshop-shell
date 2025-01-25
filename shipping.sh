@@ -78,7 +78,7 @@ dnf install mysql -y &>>$logfile
 
 validate $? "install mysql"
 
-mysql -h <MYSQL-SERVER-IPADDRESS> -uroot -pRoboShop@1 < /app/schema/shipping.sql  &>>$logfile
+mysql -h mysql.joindevops.store  -uroot -pRoboShop@1 < /app/schema/shipping.sql  &>>$logfile
 
 validate $? "loading data"
 
