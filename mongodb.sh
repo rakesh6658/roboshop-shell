@@ -20,7 +20,7 @@ else
 echo  -e " $r $2 ... failure $n"
 fi  
 }
-cp /home/centos/roboshop-shell/mongo.repo /etc/yum.repos.d/mongo.repo &>>$logfile
+cp /home/ec2-user/roboshop-shell/mongo.repo /etc/yum.repos.d/mongo.repo &>>$logfile
 
 validate $? "copying mongo.repo"
 
