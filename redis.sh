@@ -20,8 +20,14 @@ else
 echo  -e " $r $2 ... failure $n"
 fi  
 }
-yum install https://rpms.remirepo.net/enterprise/remi-release-8.rpm -y
-yum module enable redis:remi-6.2 -y
+dnf module disable redis -y &>> $logfile
+
+validate $? "disabling redis"
+
+dnf module enable redis:7 -y &>> $logfile
+
+validate $? "enable redis"
+
 yum install redis -y &>> $logfile
 
 validate $? "installing redis"
