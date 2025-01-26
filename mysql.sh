@@ -20,7 +20,7 @@ else
 echo  -e " $r $2 ... failure $n"
 fi  
 }
-yum module disable mysql -y &>>$logfile
+dnf module disable mysql -y  &>>$logfile
  
  validate $? "disabling mysql"
 
@@ -29,7 +29,7 @@ yum module disable mysql -y &>>$logfile
  validate $? "copying mysql repo"
 
 
-yum install mysql-community-server -y  &>> $logfile
+dnf install mysql-community-server -y &>> $logfile
 
 validate $? "installing mysql"
 
