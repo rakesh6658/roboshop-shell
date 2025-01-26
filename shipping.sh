@@ -74,11 +74,11 @@ systemctl start shipping &>>$logfile
 
 validate $? "start shipping"
 
-dnf install mysql -y &>>$logfile
+dnf install mysql -y  &>>$logfile
 
 validate $? "install mysql"
 
-mysql -h mysql.joindevops.store  -uroot -pRoboShop@1 < /app/schema/shipping.sql  &>>$logfile
+mysql -h <MYSQL-SERVER-IPADDRESS> -uroot -pRoboShop@1 < /app/schema/shipping.sql &>>$logfile
 
 validate $? "loading data"
 
