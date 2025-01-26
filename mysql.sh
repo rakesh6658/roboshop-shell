@@ -20,16 +20,16 @@ else
 echo  -e " $r $2 ... failure $n"
 fi  
 }
-dnf module disable mysql -y  &>>$logfile
+#dnf module disable mysql -y  &>>$logfile
  
- validate $? "disabling mysql"
+ #validate $? "disabling mysql"
 
- cp /home/ec2-user/roboshop-shell/mysql.repo /etc/yum.repos.d/mysql.repo &>>$logfile
+ #cp /home/ec2-user/roboshop-shell/mysql.repo /etc/yum.repos.d/mysql.repo &>>$logfile
 
- validate $? "copying mysql repo"
+ #validate $? "copying mysql repo"
 
 
-dnf install mysql-community-server -y &>> $logfile
+dnf install mysql-server -y &>> $logfile
 
 validate $? "installing mysql"
 
