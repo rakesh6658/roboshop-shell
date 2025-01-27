@@ -41,6 +41,6 @@ systemctl start mysqld  &>> $logfile
 
 validate $? "starting mysql"
 
-mysql_secure_installation --set-root-pass RoboShop@1 &>> $logfile
+mysql_secure_installation --set-root-pass RoboShop@1  &>> $logfile
 
 validate $? "changing default password"
