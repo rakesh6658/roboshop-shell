@@ -86,7 +86,7 @@ dnf install mongodb-mongosh -y &>>$logfile
 
 validate $? "installing mongodb-mongosh"
 
-mongosh --host mongodb.joindevops.store </app/db/master-data.js &>>$logfile
+mongosh --host 172.31.83.0 </app/db/master-data.js &>>$logfile
 
 validate $? "loading data"
 
