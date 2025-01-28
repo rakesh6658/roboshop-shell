@@ -32,7 +32,7 @@ dnf install nodejs -y &>>$logfile
 
 validate $? "installing nodejs"
 
-
+useradd roboshop
 
 user=$(id roboshop) &>> $logfile
 
@@ -45,7 +45,7 @@ echo " user already exists "
 fi
 mkdir /app &>>$logfile
 
-curl -o /tmp/user.zip https://roboshop-artifacts.s3.amazonaws.com/user-v3.zip  &>>$logfile
+curl -L -o /tmp/user.zip https://roboshop-builds.s3.amazonaws.com/user.zip &>>$logfile
 
 validate $? "downloading user.zip"
 
