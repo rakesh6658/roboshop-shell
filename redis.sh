@@ -20,19 +20,13 @@ else
 echo  -e " $r $2 ... failure $n"
 fi  
 }
-dnf module disable redis -y &>> $logfile
 
-validate $? "disabling redis"
 
-dnf module enable redis:7 -y &>> $logfile
-
-validate $? "enable redis"
-
-yum install redis -y &>> $logfile
+dnf install redis -y -y &>> $logfile
 
 validate $? "installing redis"
 
-sed -i "s/127.0.0.1/0.0.0.0/g"  /etc/redis/redis.conf /etc/redis.conf  &>>$logfile
+sed -i "s/127.0.0.1/0.0.0.0/g"  /etc/redis/redis.conf &>>$logfile
 
 validate $? "updating listen address"
 
