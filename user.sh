@@ -82,7 +82,7 @@ cp /home/ec2-user/roboshop-shell/mongo.repo /etc/yum.repos.d/mongo.repo &>>$logf
 
 validate $? "copying mongo.repo"
 
-dnf install mongodb-mongosh -y &>.$logfile
+dnf install mongodb-mongosh -y &>>$logfile
 
 validate $? "installing mogodb"
 
