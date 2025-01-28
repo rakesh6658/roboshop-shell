@@ -78,15 +78,15 @@ dnf install mysql -y  &>>$logfile
 
 validate $? "install mysql"
 
-mysql -h 172.31.87.250 -uroot -pRoboShop@1 < /app/db/schema.sql &>>$logfile
+mysql -h 172.31.89.238 -uroot -pRoboShop@1 < /app/db/schema.sql &>>$logfile
 
 validate $? "loading data"
 
-mysql -h 172.31.87.250 -uroot -pRoboShop@1 < /app/db/app-user.sql &>>$logfile
+mysql -h 172.31.89.238 -uroot -pRoboShop@1 < /app/db/app-user.sql &>>$logfile
 
 validate $? "loading app data"
 
-mysql -h 172.31.87.250 -uroot -pRoboShop@1 < /app/db/master-data.sql &>>$logfile
+mysql -h 172.31.89.238 -uroot -pRoboShop@1 < /app/db/master-data.sql &>>$logfile
 
 validate $? "loading master data"
 
