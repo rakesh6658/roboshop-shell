@@ -32,7 +32,7 @@ dnf install nodejs -y &>>$logfile
 
 validate $? "installing nodejs"
 
-useradd roboshop -y &>>$logfile
+
 
 user=$(id roboshop) &>> $logfile
 
@@ -77,6 +77,20 @@ validate $? "enabling user"
 systemctl start user &>>$logfile
 
 validate $? "start user"
+
+cp /home/ec2-user/roboshop-shell/mongo.repo /etc/yum.repos.d/mongo.repo &>>$logfile
+
+validate $? "copying mongo.repo"
+
+dnf install mongodb-mongosh -y &>.$logfile
+
+validate $? "installing mogodb"
+
+mongosh --host 172.31.83.0 </app/schema/user.js &>>$logfile
+
+validate $? "loading schema"
+
+
 
 
 
