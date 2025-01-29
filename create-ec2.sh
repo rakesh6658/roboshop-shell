@@ -1,4 +1,4 @@
-#!/bin/bash
+
 
 servers=("mongodb" "redis" "mysql" "rabbitmq" "catalogue" "cart" "user" "shipping" "payment" "dispatch" "web")
 instance_type=""
