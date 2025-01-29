@@ -2,8 +2,8 @@
 
 servers=("mongodb" "redis" "mysql" "rabbitmq" "catalogue" "cart" "user" "shipping" "payment" "dispatch" "web")
 instance_type=""
-imageid=ami-0b4f379183e5706b9 
-securityid=sg-0dc7448f0fa6926f1
+imageid="ami-0b4f379183e5706b9" 
+securityid="sg-0dc7448f0fa6926f1"
 
 
 for i in ${servers[@]}
