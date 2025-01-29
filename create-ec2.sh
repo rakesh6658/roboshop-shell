@@ -20,7 +20,7 @@ privateip=$(aws ec2 run-instances --image-id $imageid --instance-type $instance_
 echo "$i private ip address $privateip"
 aws route53  create-resource-record-sets --hosted-zone-id $hostedzoneid --change-batch 
 {
-    "Comment": "Update record to add new CNAME record","Changes":
+    "Comment": "Update record to add new CNAME record","Changes":"
      [
         {
             "Action": "CREATE",
@@ -35,7 +35,7 @@ aws route53  create-resource-record-sets --hosted-zone-id $hostedzoneid --change
                 ]
             }
         }
-    ]
+    ]"
 }
 
 done
