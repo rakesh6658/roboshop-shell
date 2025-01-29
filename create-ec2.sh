@@ -10,11 +10,11 @@ for i in ${servers[@]}
 do
 if [[ $i=="mongodb" || $i=="mysql" ]]
 then
-$instance_type=t3.micro
+$instance_type="t3.micro"
 else
-$instance_type=t2.micro
+$instance_type="t2.micro"
 fi
- aws ec2 run-instances --image-id $imageid --instance-type $instance_type --security-group-ids $securityid --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value="$i"}]'  | jq -r ".Instances[0].PrivateIpAddress"
+aws ec2 run-instances --image-id $imageid --instance-type $instance_type --security-group-ids $securityid --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value="$i"}]'  | jq -r ".Instances[0].PrivateIpAddress"
 
 
 done
