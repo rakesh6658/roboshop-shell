@@ -8,7 +8,7 @@ securityid="sg-0dc7448f0fa6926f1"
 
 for i in ${servers[@]}
 do
-if [[ $i=="mongodb" || $i=="mysql" ]]
+if [[ $i==mongodb || $i==mysql ]]
 then
 instance_type="t3.micro"
 else
