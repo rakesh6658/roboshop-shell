@@ -2,7 +2,7 @@
 
 servers=$@
 instance_type=""
-imageid="ami-0b4f379183e5706b9" 
+imageid="ami-09c813fb71547fc4f" 
 securityid="sg-0dc7448f0fa6926f1"
 domain_name=joindevops.store
 hostedzoneid=Z0391488M5DNTAYOTVFM
