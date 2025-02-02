@@ -16,7 +16,7 @@ instance_type="t3.micro"
 else
 instance_type="t2.micro"
 fi
-if [ ]
+
 privateip=$(aws ec2 run-instances --image-id $imageid --instance-type $instance_type --security-group-ids $securityid --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value="$i"}]"  | jq -r ".Instances[0].PrivateIpAddress")
 echo "$i private ip address $privateip"
 aws route53 change-resource-record-sets --hosted-zone-id $hostedzoneid --change-batch '
